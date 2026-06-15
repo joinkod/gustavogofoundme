@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Detectar idioma antes del primer render para evitar flash -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('gustavo-lang');
+      var browser = navigator.language && navigator.language.startsWith('es') ? 'es' : 'en';
+      var lang = saved || browser;
+      document.documentElement.dataset.lang = lang;
+      document.documentElement.lang = lang;
+    })();
+  </script>
+
+  <!-- SEO -->
+  <meta name="description" content="Gustavo Hernández, 52 años, lucha por su vida en el Jackson Memorial Hospital en Miami tras sufrir varios derrames cerebrales. Ayúdanos a alcanzar nuestra meta de $18,000." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Help Gustavo Fight for His Life / Ayuda a Gustavo a Luchar por su Vida" />
+  <meta property="og:description" content="Gustavo Hernández is 52 years old and fighting for survival after several strokes. Help us reach $18,000 for his surgery at Jackson Memorial Hospital in Miami." />
+  <meta property="og:type" content="website" />
+  <!-- Reemplazar con URL real de la foto al tenerla: -->
+  <!-- <meta property="og:image" content="https://tu-dominio.com/gustavo.jpg" /> -->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Help Gustavo / Ayuda a Gustavo" />
+  <meta name="twitter:description" content="Gustavo Hernández, 52, is fighting for his life in Miami. Help us reach $18,000." />
+
+  <!-- Color de barra del navegador en móvil -->
+  <meta name="theme-color" content="#FAFAF8" />
+
+  <title>Help Gustavo / Ayuda a Gustavo</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <span class="show-en">ES</span>
+        <span class="show-es">EN</span>
+      </button>
+      <a href="https://www.gofundme.com/f/ayudemos-a-gustavo-a-luchar-por-su-vida"
+         target="_blank" rel="noopener noreferrer" class="nav-donate">
+        <span class="show-en">Donate</span>
+        <span class="show-es">Donar</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        <span class="show-en">Help Gustavo<br>Fight for His Life</span>
+        <span class="show-es">Ayuda a Gustavo<br>a Luchar por su Vida</span>
+      </h1>
+      <p class="hero-sub">
+        <span class="show-en">At 52, he is fighting for survival in a hospital in Miami.<br class="break-desktop" />Your donation can bring him home.</span>
+        <span class="show-es">A sus 52 años, lucha por su vida en un hospital de Miami.<br class="break-desktop" />Tu donación puede traerlo a casa.</span>
+      </p>
+      <a href="https://www.gofundme.com/f/ayudemos-a-gustavo-a-luchar-por-su-vida"
+         target="_blank" rel="noopener noreferrer" class="btn-primary hero-cta">
+        <span class="show-en">Donate Now</span>
+        <span class="show-es">Donar Ahora</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- GUSTAVO -->
+  <section class="about">
+    <div class="container about-grid">
+
+      <div class="about-photo reveal">
+        <!--
+          REEMPLAZAR este bloque por:
+          <img src="gustavo.jpg" alt="Gustavo Hernández" />
+        -->
+        <div class="photo-placeholder" aria-hidden="true">
+          <span class="show-en">Photo of Gustavo</span>
+          <span class="show-es">Foto de Gustavo</span>
+        </div>
+        <p class="photo-caption">Gustavo Hernández, 52</p>
+      </div>
+
+      <div class="about-text reveal">
+        <div class="show-en">
+          <p class="about-intro">
+            Gustavo Hernández is 52 years old. He has a family that loves him.
+            Right now, he is fighting for his life, and his family needs your help to bring him home.
+          </p>
+        </div>
+        <div class="show-es">
+          <p class="about-intro">
+            Gustavo Hernández tiene 52 años. Tiene una familia que lo ama profundamente.
+            Ahora mismo, está luchando por su vida, y su familia necesita tu ayuda para traerlo a casa.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUÉ PASÓ -->
+  <section class="situation">
+    <div class="container-narrow">
+
+      <h2 class="section-title reveal">
+        <span class="show-en">What happened</span>
+        <span class="show-es">Qué pasó</span>
+      </h2>
+
+      <div class="situation-body reveal">
+
+        <div class="show-en">
+          <p>Gustavo suffered several strokes caused by vertebrobasilar insufficiency: dangerously narrow arteries in the back of the brain that control balance, vision, and the connection between the brain and the body.</p>
+          <p>Doctors first tried a less invasive procedure, placing a stent to reopen those arteries. It did not work.</p>
+          <p>He was then transferred by ambulance to Jackson Memorial Hospital in Miami, one of the few places in the world with the specialists needed for the next step: a vertebral artery bypass surgery. In this complex operation, surgeons use a blood vessel from another part of his body to create a new path for blood to reach the brain.</p>
+          <p class="situation-last">The surgery has already been scheduled multiple times. Each time it approaches, new imaging and tests reveal complications that must be resolved before they can safely operate. He keeps waiting. He keeps fighting.</p>
+        </div>
+
+        <div class="show-es">
+          <p>Gustavo sufrió varios derrames cerebrales causados por una insuficiencia vertebrobasilar: arterias peligrosamente estrechas en la parte posterior del cerebro que controlan el equilibrio, la visión y la conexión entre el cerebro y el cuerpo.</p>
+          <p>Los médicos primero intentaron un procedimiento menos invasivo: colocarle un stent para reabrir esas arterias. No funcionó.</p>
+          <p>Lo trasladaron en ambulancia al Jackson Memorial Hospital, en Miami, uno de los pocos lugares en el mundo con los especialistas capaces de realizar el siguiente paso: una cirugía de bypass de la arteria vertebral. En esta operación compleja, los cirujanos usan un vaso sanguíneo de otra parte de su cuerpo para crear un nuevo camino que lleve la sangre hasta el cerebro.</p>
+          <p class="situation-last">La cirugía ya ha sido programada múltiples veces. Cada vez que se acerca el momento, los exámenes e imágenes revelan nuevas complicaciones que deben resolverse antes de poder operar con seguridad. Él sigue esperando. Él sigue luchando.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LA META -->
+  <section class="goal">
+    <div class="container-narrow">
+      <p class="goal-label reveal">
+        <span class="show-en">The goal</span>
+        <span class="show-es">La meta</span>
+      </p>
+      <p class="goal-amount reveal">$18,000</p>
+      <p class="goal-desc reveal">
+        <span class="show-en">Every dollar donated goes directly toward Gustavo's care at Jackson Memorial. Every dollar counts.</span>
+        <span class="show-es">Cada dólar donado va directamente a la atención de Gustavo en el Jackson Memorial. Cada dólar cuenta.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta">
+    <div class="container-narrow">
+      <p class="cta-heading reveal">
+        <span class="show-en">If you can give, give.<br>If you can share, share.</span>
+        <span class="show-es">Si puedes dar, da.<br>Si puedes compartir, comparte.</span>
+      </p>
+      <p class="cta-sub reveal">
+        <span class="show-en">Every act of generosity brings Gustavo one step closer to home.</span>
+        <span class="show-es">Cada acto de generosidad acerca a Gustavo un paso más a casa.</span>
+      </p>
+      <div class="cta-buttons reveal">
+        <a href="https://www.gofundme.com/f/ayudemos-a-gustavo-a-luchar-por-su-vida"
+           target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <span class="show-en">Donate on GoFundMe</span>
+          <span class="show-es">Donar en GoFundMe</span>
+        </a>
+        <button class="btn-share" id="shareBtn" type="button">
+          <span id="shareLabelEn" class="show-en">Share this page</span>
+          <span id="shareLabelEs" class="show-es">Compartir esta página</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
