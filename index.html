@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Detectar idioma antes del primer render para evitar flash -->
+  <!-- Detectar idioma antes del primer render -->
   <script>
     (function () {
       var saved = localStorage.getItem('gustavo-lang');
@@ -16,29 +16,29 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Gustavo Hernández, 52 años, lucha por su vida en el Jackson Memorial Hospital en Miami tras sufrir varios derrames cerebrales. Ayúdanos a alcanzar nuestra meta de $18,000." />
+  <meta name="description" content="Gustavo Hernández, 52, has fought with incredible courage. Now he needs one last push from all of us. Help us reach $18,000 to bring him home." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Help Gustavo Fight for His Life / Ayuda a Gustavo a Luchar por su Vida" />
-  <meta property="og:description" content="Gustavo Hernández is 52 years old and fighting for survival after several strokes. Help us reach $18,000 for his surgery at Jackson Memorial Hospital in Miami." />
+  <meta property="og:title" content="Let's bring Gustavo home / Vamos a traer a Gustavo a casa" />
+  <meta property="og:description" content="Gustavo Hernández is 52 years old and fighting for his life in Miami. He has come so far. Help us get him home." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gustavogofoundme.vercel.app" />
   <meta property="og:image" content="https://gustavogofoundme.vercel.app/gustavo1.jpeg" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Help Gustavo / Ayuda a Gustavo" />
+  <meta name="twitter:title" content="Let's bring Gustavo home" />
   <meta name="twitter:description" content="Gustavo Hernández, 52, is fighting for his life in Miami. Help us reach $18,000." />
+  <meta name="twitter:image" content="https://gustavogofoundme.vercel.app/gustavo1.jpeg" />
 
-  <!-- Color de barra del navegador en móvil -->
-  <meta name="theme-color" content="#FAFAF8" />
+  <meta name="theme-color" content="#ffffff" />
 
-  <title>Help Gustavo / Ayuda a Gustavo</title>
+  <title>Let's bring Gustavo home / Vamos a traer a Gustavo a casa</title>
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -59,16 +59,21 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO: SPLIT SCREEN -->
   <section class="hero">
-    <div class="hero-inner">
+
+    <div class="hero-photo">
+      <img src="gustavo1.jpeg" alt="Gustavo Hernández" />
+    </div>
+
+    <div class="hero-content">
       <h1 class="hero-title">
-        <span class="show-en">Help Gustavo<br>Fight for His Life</span>
-        <span class="show-es">Ayuda a Gustavo<br>a Luchar por su Vida</span>
+        <span class="show-en">Let's bring<br>Gustavo home.</span>
+        <span class="show-es">Vamos a traer<br>a Gustavo a casa.</span>
       </h1>
       <p class="hero-sub">
-        <span class="show-en">At 52, he is fighting for survival in a hospital in Miami.<br class="break-desktop" />Your donation can bring him home.</span>
-        <span class="show-es">A sus 52 años, lucha por su vida en un hospital de Miami.<br class="break-desktop" />Tu donación puede traerlo a casa.</span>
+        <span class="show-en">He's 52 years old and he has fought with everything he has. Now he needs one final push from all of us.</span>
+        <span class="show-es">Tiene 52 años y ha luchado con todo lo que tiene. Ahora necesita un último empujón de todos nosotros.</span>
       </p>
       <a href="https://www.gofundme.com/f/ayudemos-a-gustavo-a-luchar-por-su-vida"
          target="_blank" rel="noopener noreferrer" class="btn-primary hero-cta">
@@ -76,32 +81,16 @@
         <span class="show-es">Donar Ahora</span>
       </a>
     </div>
+
   </section>
 
-  <!-- GUSTAVO -->
-  <section class="about">
-    <div class="container about-grid">
-
-      <div class="about-photo reveal">
-        <img src="gustavo1.jpeg" alt="Gustavo Hernández" />
-        <p class="photo-caption">Gustavo Hernández, 52</p>
-      </div>
-
-      <div class="about-text reveal">
-        <div class="show-en">
-          <p class="about-intro">
-            Gustavo Hernández is 52 years old. He has a family that loves him.
-            Right now, he is fighting for his life, and his family needs your help to bring him home.
-          </p>
-        </div>
-        <div class="show-es">
-          <p class="about-intro">
-            Gustavo Hernández tiene 52 años. Tiene una familia que lo ama profundamente.
-            Ahora mismo, está luchando por su vida, y su familia necesita tu ayuda para traerlo a casa.
-          </p>
-        </div>
-      </div>
-
+  <!-- QUIÉN ES GUSTAVO -->
+  <section class="story">
+    <div class="container-narrow">
+      <p class="story-text reveal">
+        <span class="show-en">Gustavo Hernández is 52 years old. He has a family that loves him deeply and waits for him to walk through the door. He has faced every obstacle with courage. Now he needs us.</span>
+        <span class="show-es">Gustavo Hernández tiene 52 años. Tiene una familia que lo ama profundamente y que espera verlo entrar por la puerta. Ha enfrentado cada obstáculo con valentía. Ahora nos necesita.</span>
+      </p>
     </div>
   </section>
 
@@ -110,24 +99,24 @@
     <div class="container-narrow">
 
       <h2 class="section-title reveal">
-        <span class="show-en">What happened</span>
-        <span class="show-es">Qué pasó</span>
+        <span class="show-en">How far he's come</span>
+        <span class="show-es">Hasta dónde ha llegado</span>
       </h2>
 
       <div class="situation-body reveal">
 
         <div class="show-en">
-          <p>Gustavo suffered several strokes caused by vertebrobasilar insufficiency: dangerously narrow arteries in the back of the brain that control balance, vision, and the connection between the brain and the body.</p>
-          <p>Doctors first tried a less invasive procedure, placing a stent to reopen those arteries. It did not work.</p>
-          <p>He was then transferred by ambulance to Jackson Memorial Hospital in Miami, one of the few places in the world with the specialists needed for the next step: a vertebral artery bypass surgery. In this complex operation, surgeons use a blood vessel from another part of his body to create a new path for blood to reach the brain.</p>
-          <p class="situation-last">The surgery has already been scheduled multiple times. Each time it approaches, new imaging and tests reveal complications that must be resolved before they can safely operate. He keeps waiting. He keeps fighting.</p>
+          <p>Gustavo suffered several strokes. The cause: vertebrobasilar insufficiency, a condition where arteries at the back of the brain become dangerously narrow, affecting balance, vision, and the connection between the brain and the body.</p>
+          <p>When doctors tried a stent to reopen those arteries, it did not work. So they did what needed to be done: they transferred him by ambulance to Jackson Memorial Hospital in Miami, one of the few places in the world with the specialists capable of performing the next step.</p>
+          <p>That step is a vertebral artery bypass surgery — a complex procedure where surgeons use a blood vessel from another part of his body to create a new path for blood to reach his brain. This surgery can give him his life back.</p>
+          <p class="situation-highlight">The surgery has been scheduled. Each time it approaches, new imaging reveals complications that must be resolved first. Gustavo keeps waiting. Gustavo keeps fighting. And now, so can we.</p>
         </div>
 
         <div class="show-es">
-          <p>Gustavo sufrió varios derrames cerebrales causados por una insuficiencia vertebrobasilar: arterias peligrosamente estrechas en la parte posterior del cerebro que controlan el equilibrio, la visión y la conexión entre el cerebro y el cuerpo.</p>
-          <p>Los médicos primero intentaron un procedimiento menos invasivo: colocarle un stent para reabrir esas arterias. No funcionó.</p>
-          <p>Lo trasladaron en ambulancia al Jackson Memorial Hospital, en Miami, uno de los pocos lugares en el mundo con los especialistas capaces de realizar el siguiente paso: una cirugía de bypass de la arteria vertebral. En esta operación compleja, los cirujanos usan un vaso sanguíneo de otra parte de su cuerpo para crear un nuevo camino que lleve la sangre hasta el cerebro.</p>
-          <p class="situation-last">La cirugía ya ha sido programada múltiples veces. Cada vez que se acerca el momento, los exámenes e imágenes revelan nuevas complicaciones que deben resolverse antes de poder operar con seguridad. Él sigue esperando. Él sigue luchando.</p>
+          <p>Gustavo sufrió varios derrames cerebrales. La causa: una insuficiencia vertebrobasilar, una condición en la que las arterias en la parte posterior del cerebro se estrechan peligrosamente, afectando el equilibrio, la visión y la conexión entre el cerebro y el cuerpo.</p>
+          <p>Cuando los médicos intentaron un stent para reabrir esas arterias, no funcionó. Así que hicieron lo que debían: lo trasladaron en ambulancia al Jackson Memorial Hospital en Miami, uno de los pocos lugares en el mundo con los especialistas capaces de realizar el siguiente paso.</p>
+          <p>Ese paso es una cirugía de bypass de la arteria vertebral, un procedimiento complejo en el que los cirujanos usan un vaso sanguíneo de otra parte de su cuerpo para crear un nuevo camino que lleve la sangre a su cerebro. Esta cirugía puede devolverle la vida.</p>
+          <p class="situation-highlight">La cirugía ha sido programada. Cada vez que se acerca, los exámenes revelan complicaciones que deben resolverse primero. Gustavo sigue esperando. Gustavo sigue luchando. Y ahora, también podemos hacerlo nosotros.</p>
         </div>
 
       </div>
@@ -138,13 +127,13 @@
   <section class="goal">
     <div class="container-narrow">
       <p class="goal-label reveal">
-        <span class="show-en">The goal</span>
-        <span class="show-es">La meta</span>
+        <span class="show-en">Our goal</span>
+        <span class="show-es">Nuestra meta</span>
       </p>
       <p class="goal-amount reveal">$18,000</p>
       <p class="goal-desc reveal">
-        <span class="show-en">Every dollar donated goes directly toward Gustavo's care at Jackson Memorial. Every dollar counts.</span>
-        <span class="show-es">Cada dólar donado va directamente a la atención de Gustavo en el Jackson Memorial. Cada dólar cuenta.</span>
+        <span class="show-en">Every dollar donated goes directly toward bringing Gustavo home. Every dollar counts.</span>
+        <span class="show-es">Cada dólar donado va directamente a traer a Gustavo a casa. Cada dólar cuenta.</span>
       </p>
     </div>
   </section>
@@ -153,12 +142,12 @@
   <section class="final-cta">
     <div class="container-narrow">
       <p class="cta-heading reveal">
-        <span class="show-en">If you can give, give.<br>If you can share, share.</span>
-        <span class="show-es">Si puedes dar, da.<br>Si puedes compartir, comparte.</span>
+        <span class="show-en">He has done<br>the hardest part.<br>Now it's our turn.</span>
+        <span class="show-es">Él ya hizo<br>la parte más difícil.<br>Ahora nos toca a nosotros.</span>
       </p>
       <p class="cta-sub reveal">
-        <span class="show-en">Every act of generosity brings Gustavo one step closer to home.</span>
-        <span class="show-es">Cada acto de generosidad acerca a Gustavo un paso más a casa.</span>
+        <span class="show-en">Donate, share, or do both. Every act of generosity brings him one step closer to home.</span>
+        <span class="show-es">Dona, comparte, o ambos. Cada acto de generosidad lo acerca un paso más a casa.</span>
       </p>
       <div class="cta-buttons reveal">
         <a href="https://www.gofundme.com/f/ayudemos-a-gustavo-a-luchar-por-su-vida"
