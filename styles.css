@@ -3,17 +3,27 @@
    =========================== */
 :root {
   --color-bg: #ffffff;
-  --color-bg-warm: #fffbf4;
-  --color-bg-amber: #fff8ed;
-  --color-text: #111111;
-  --color-muted: #5f6b7a;
-  --color-border: #f0ece6;
-  --color-accent: #f09420;
-  --color-accent-dark: #d07d10;
+  --color-bg-emerald: #f0fdf4;
+  --color-bg-teal: #f0fdfa;
+  --color-text: #111827;
+  --color-muted: #4b5563;
+  --color-border: #d1fae5;
+  --color-border-light: #e7f5f0;
 
-  /* Titulares: Outfit — geométrica, cálida, optimista */
+  /* Esmeralda — vida, esperanza, vitalidad */
+  --color-emerald: #059669;
+  --color-emerald-dark: #047857;
+  --color-emerald-light: #10b981;
+
+  /* Teal — calma, profundidad */
+  --color-teal: #0d9488;
+  --color-teal-dark: #0f766e;
+
+  /* Dorado — calidez, aspiración */
+  --color-gold: #b45309;
+  --color-gold-light: #d97706;
+
   --font-display: 'Outfit', system-ui, sans-serif;
-  /* Cuerpo: Work Sans — par recomendado con Outfit, legible y moderna */
   --font-body: 'Work Sans', system-ui, -apple-system, sans-serif;
 
   --max-w: 1100px;
@@ -71,7 +81,7 @@ img {
 }
 
 .nav.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 var(--color-border);
@@ -88,7 +98,7 @@ img {
 }
 
 .lang-toggle {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(0, 0, 0, 0.12);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -105,17 +115,23 @@ img {
 
 .lang-toggle:hover {
   background: rgba(255, 255, 255, 1);
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: var(--color-emerald);
+  color: var(--color-emerald-dark);
 }
 
 .lang-toggle:active {
   transform: scale(0.97);
 }
 
+.lang-toggle:focus-visible {
+  outline: 3px solid var(--color-emerald);
+  outline-offset: 3px;
+}
+
 .nav-donate {
   display: inline-block;
-  background-color: var(--color-accent);
-  color: #111111;
+  background-color: var(--color-emerald);
+  color: #ffffff;
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -125,15 +141,22 @@ img {
   line-height: 1;
   transition: background-color 0.2s ease;
   white-space: nowrap;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-donate:hover {
-  background-color: var(--color-accent-dark);
-  color: #ffffff;
+  background-color: var(--color-emerald-dark);
 }
 
 .nav-donate:active {
   transform: scale(0.97);
+}
+
+.nav-donate:focus-visible {
+  outline: 3px solid var(--color-emerald);
+  outline-offset: 3px;
 }
 
 /* ===========================
@@ -157,15 +180,30 @@ img {
   object-position: center top;
 }
 
-/* Sombra suave para que el nav sea legible sobre la foto */
+/* Overlay sutil esmeralda sobre la foto */
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 150, 105, 0.15) 0%,
+    transparent 60%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Gradiente para el nav */
 .hero-photo::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 140px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.18), transparent);
+  height: 160px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), transparent);
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -173,33 +211,62 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6rem 4rem 4rem 5rem;
+  padding: 6rem 4.5rem 4rem 5rem;
+  position: relative;
+}
+
+/* Barra decorativa dorada vertical */
+.hero-content::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--color-gold-light), var(--color-gold));
+  border-radius: 0 4px 4px 0;
+}
+
+.hero-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 4.5vw, 4rem);
+  font-size: clamp(2.75rem, 4.5vw, 4.25rem);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
   color: var(--color-text);
   margin-bottom: 1.5rem;
-  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fadeUp 0.9s 0.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.accent-gold {
+  color: var(--color-gold);
 }
 
 .hero-sub {
   font-family: var(--font-body);
   font-size: clamp(1rem, 1.5vw, 1.125rem);
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--color-muted);
   max-width: 38ch;
   margin-bottom: 2.5rem;
-  animation: fadeUp 0.9s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fadeUp 0.9s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-cta {
-  animation: fadeUp 0.9s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fadeUp 0.9s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
   align-self: flex-start;
 }
 
@@ -207,29 +274,30 @@ img {
    BOTONES
    =========================== */
 .btn-primary {
-  display: inline-block;
-  background-color: var(--color-accent);
-  color: #111111;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-emerald);
+  color: #ffffff;
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  padding: 0.9rem 2.25rem;
-  min-height: 44px;
+  padding: 0.875rem 2.25rem;
+  min-height: 48px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
   white-space: nowrap;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent-dark);
-  color: #ffffff;
+  background-color: var(--color-emerald-dark);
 }
 
 .btn-primary:focus-visible {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-emerald);
   outline-offset: 3px;
 }
 
@@ -238,44 +306,36 @@ img {
 }
 
 .btn-share {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   background: transparent;
-  color: var(--color-text);
+  color: var(--color-teal-dark);
   font-family: var(--font-body);
   font-size: 1rem;
-  font-weight: 400;
-  padding: 0.9rem 2.25rem;
-  min-height: 44px;
+  font-weight: 500;
+  padding: 0.875rem 2.25rem;
+  min-height: 48px;
   border-radius: 999px;
-  border: 1.5px solid #d0ccc7;
+  border: 1.5px solid var(--color-teal);
   cursor: pointer;
   white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-share:hover {
-  background-color: var(--color-text);
-  color: var(--color-bg);
-  border-color: var(--color-text);
+  background-color: var(--color-teal);
+  color: #ffffff;
+  border-color: var(--color-teal);
 }
 
 .btn-share:focus-visible {
-  outline: 3px solid var(--color-text);
+  outline: 3px solid var(--color-teal);
   outline-offset: 3px;
 }
 
 .btn-share:active {
   transform: scale(0.98);
-}
-
-.nav-donate:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 3px;
-}
-
-.lang-toggle:focus-visible {
-  outline: 3px solid var(--color-text);
-  outline-offset: 3px;
 }
 
 /* ===========================
@@ -291,19 +351,50 @@ img {
    HISTORIA
    =========================== */
 .story {
-  padding: 7rem 0;
+  padding: 8rem 0;
   border-top: 1px solid var(--color-border);
+  position: relative;
+}
+
+/* Línea decorativa central */
+.story::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-emerald), var(--color-teal));
+  border-radius: 999px;
+}
+
+.story-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-emerald);
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .story-text {
   font-family: var(--font-display);
-  font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.375rem, 2.5vw, 1.875rem);
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--color-text);
   text-align: center;
-  max-width: 560px;
+  max-width: 540px;
   margin: 0 auto;
+}
+
+.story-text em {
+  font-style: normal;
+  color: var(--color-emerald);
+  font-weight: 600;
 }
 
 /* ===========================
@@ -311,12 +402,28 @@ img {
    =========================== */
 .situation {
   padding: 7rem 0;
-  background-color: var(--color-bg-warm);
+  background-color: var(--color-bg-emerald);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-emerald-dark);
+  background: rgba(5, 150, 105, 0.1);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.75rem;
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.625rem, 2.5vw, 2.25rem);
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-text);
@@ -334,26 +441,27 @@ img {
 
 .situation-highlight {
   margin-bottom: 0 !important;
-  font-weight: 500;
-  color: var(--color-text) !important;
+  font-weight: 600;
+  color: var(--color-emerald-dark) !important;
 }
 
 /* ===========================
    LA META
    =========================== */
 .goal {
-  padding: 8rem 0;
+  padding: 9rem 0;
   text-align: center;
-  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+  position: relative;
 }
 
 .goal-label {
   font-family: var(--font-body);
   font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-teal);
   margin-bottom: 1.25rem;
 }
 
@@ -362,9 +470,9 @@ img {
   font-size: clamp(5.5rem, 16vw, 10rem);
   font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--color-accent);
-  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
+  color: var(--color-emerald);
+  margin-bottom: 1.75rem;
 }
 
 .goal-desc {
@@ -381,18 +489,22 @@ img {
    =========================== */
 .final-cta {
   padding: 8rem 0;
-  background-color: var(--color-bg-amber);
+  background-color: var(--color-bg-teal);
   text-align: center;
-  border-top: 1px solid #f5e8d0;
+  border-top: 1px solid rgba(13, 148, 136, 0.12);
 }
 
 .cta-heading {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--color-text);
   margin-bottom: 1.25rem;
+}
+
+.cta-heading .cta-em {
+  color: var(--color-teal-dark);
 }
 
 .cta-sub {
@@ -401,7 +513,7 @@ img {
   line-height: 1.7;
   color: var(--color-muted);
   max-width: 40ch;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2.75rem;
 }
 
 .cta-buttons {
@@ -417,7 +529,7 @@ img {
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(22px);
   }
   to {
     opacity: 1;
@@ -427,7 +539,7 @@ img {
 
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(18px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -441,6 +553,7 @@ img {
    MOVIMIENTO REDUCIDO
    =========================== */
 @media (prefers-reduced-motion: reduce) {
+  .hero-label,
   .hero-title,
   .hero-sub,
   .hero-cta {
@@ -459,44 +572,43 @@ img {
    =========================== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0f0f0f;
-    --color-bg-warm: #161410;
-    --color-bg-amber: #1a1508;
-    --color-text: #f5f0ea;
-    --color-muted: #9aa3ae;
-    --color-border: #2a2520;
-    --color-accent: #f5a030;
-    --color-accent-dark: #e08820;
+    --color-bg: #0a0f0e;
+    --color-bg-emerald: #071a12;
+    --color-bg-teal: #071615;
+    --color-text: #f0fdf4;
+    --color-muted: #86efac;
+    --color-muted: #9ca3af;
+    --color-border: #1a3d2b;
+    --color-border-light: #122b1e;
+    --color-emerald: #10b981;
+    --color-emerald-dark: #059669;
+    --color-emerald-light: #34d399;
+    --color-teal: #14b8a6;
+    --color-teal-dark: #0d9488;
+    --color-gold: #d97706;
+    --color-gold-light: #f59e0b;
   }
 
   .nav.scrolled {
-    background-color: rgba(15, 15, 15, 0.95);
+    background-color: rgba(10, 15, 14, 0.96);
   }
 
   .lang-toggle {
-    background: rgba(30, 28, 25, 0.85);
+    background: rgba(20, 30, 25, 0.85);
     border-color: rgba(255, 255, 255, 0.12);
     color: var(--color-text);
   }
 
-  .lang-toggle:hover {
-    background: rgba(40, 38, 35, 1);
-  }
-
   .nav-donate {
-    color: #111111;
+    color: #ffffff;
   }
 
-  .nav-donate:hover {
-    color: #111111;
+  .situation-body p {
+    color: #d1d5db;
   }
 
-  .btn-primary {
-    color: #111111;
-  }
-
-  .btn-primary:hover {
-    color: #111111;
+  .section-tag {
+    background: rgba(16, 185, 129, 0.15);
   }
 }
 
@@ -505,7 +617,7 @@ img {
    =========================== */
 @media (max-width: 900px) {
   .hero-content {
-    padding: 5rem 2.5rem 3rem 3rem;
+    padding: 5rem 2.5rem 3rem 3.5rem;
   }
 }
 
@@ -515,7 +627,7 @@ img {
 @media (max-width: 700px) {
   .hero {
     grid-template-columns: 1fr;
-    grid-template-rows: 60dvh auto;
+    grid-template-rows: 65dvh auto;
     min-height: auto;
   }
 
@@ -525,7 +637,17 @@ img {
   }
 
   .hero-content {
-    padding: 3rem 1.5rem 3.5rem;
+    padding: 3.5rem 1.75rem 4rem;
+  }
+
+  .hero-content::before {
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-gold-light), var(--color-gold));
+    border-radius: 0 0 4px 0;
   }
 
   .hero-title {
@@ -542,7 +664,7 @@ img {
   }
 
   .story {
-    padding: 5rem 0;
+    padding: 5.5rem 0;
   }
 
   .situation {
@@ -567,5 +689,6 @@ img {
     width: 100%;
     max-width: 320px;
     text-align: center;
+    justify-content: center;
   }
 }
